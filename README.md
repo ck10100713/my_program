@@ -4,15 +4,15 @@
 
 ## 專案概述
 
-mysite:投票系統
-ithom:店家食物網站
-locallibrary:圖書館
+- mysite:投票系統
+- ithom:店家食物網站
+- locallibrary:圖書館
 
 ## 目前進度
 
-mysite:待熟練後修改
-ithom:正在進行中
-locallibrary:胎死腹中
+- mysite:待熟練後修改
+- ithom:正在進行中
+- locallibrary:胎死腹中
 
 ## 未完成的功能
 
