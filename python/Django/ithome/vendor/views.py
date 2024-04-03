@@ -18,7 +18,15 @@ def vendor_create_view(request):
     context = {'form': form}
     return render(request, 'vendor/vendor_create.html', context)
 
+from django.http import Http404
+from django.shortcuts import get_object_or_404
+
 def single_Vendor(request, id):
-    vendor_lists = Vendor.objects.get(id=id)
+    # try:
+    #     vendor_lists = Vendor.objects.get(id=id)
+    # except Vendor.DoesNotExist:
+    #     raise Http404("Vendor does not exist")
+    
+    vendor_lists = get_object_or_404(Vendor, id=id)
     context = {'vendor_list': vendor_lists}
     return render(request, 'vendor/vendor_detail.html', context)

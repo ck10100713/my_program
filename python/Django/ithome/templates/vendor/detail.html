@@ -3,6 +3,7 @@
 {% block content%}
 {% for vlist in vendor_list %}
   <h1> shop:{{vlist.vendor_name}} </h1>
+  <p> <a href= {{ vlist.get_absolute_url }}> More detail...</a> </p>
   <ul>
     <li>shop:{{ vlist.store_name}}</li>
     <li>phone:{{ vlist.phone_number}}</li>

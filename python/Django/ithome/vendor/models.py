@@ -1,6 +1,7 @@
 from django.db import models
 
 from django.contrib import admin
+from django.urls import reverse
 # Create your models here.
 
 class Vendor(models.Model):
@@ -11,6 +12,10 @@ class Vendor(models.Model):
 
     def __str__(self):
         return self.vendor_name
+
+    def get_absolute_url(self):
+        return reverse("vendors:vendor_id", kwargs={"id": self.id})
+        # return f"/vendor/{self.id}/"
 
 class Food(models.Model):
     food_name = models.CharField(max_length=30)
