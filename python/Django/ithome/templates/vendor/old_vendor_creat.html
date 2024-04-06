@@ -1,0 +1,24 @@
+{% block title %}Create Vendor{% endblock %}
+
+{% block content %}
+<h2>Create Vendor</h2>
+<form method='POST'>
+  {% csrf_token %}
+  <div>
+    <label for="vendor_name">Vendor Name:</label>
+    {{ form.vendor_name }}
+  </div>
+  <div>
+    <label for="store_name">store name:</label>
+    {{ form.store_name }}
+  </div>
+  <div>
+    <label for="phone_number">phone number:</label>
+    {{ form.phone_number }}
+  </div>
+  <div>
+    <label for="address">address:</label>
+    {{ form.address }}
+  </div>
+  <input type="submit" value="Save Vendor" />
+</form>

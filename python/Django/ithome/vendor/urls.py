@@ -17,13 +17,17 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from . import views
+from .views import VendorListView, VendorDetailView, VendorCreateView, VendorUpdateView
 
 # urlpatterns = [
 #     path('', views.showtemplate),
 # ]
 app_name = 'vendors'
 urlpatterns = [
-    path('', views.vendor_index, name='vendor_index'),
-    path('create', views.vendor_create_view),
-    path('<int:id>/', views.single_Vendor, name='vendor_id'),
+    # path('', views.vendor_index, name='vendor_index'),
+    path('', VendorListView.as_view(), name='index'),
+    # path('create', views.vendor_create_view),
+    path('create/', VendorCreateView.as_view(), name='create'),
+    path('<int:pk>/', VendorDetailView.as_view(), name='vendor_id'),
+    path('<int:pk>/update/', VendorUpdateView.as_view(), name='update'),
 ]
