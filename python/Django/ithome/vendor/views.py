@@ -9,7 +9,6 @@ def vendor_index(request):
     return render(request, 'vendor/detail.html', context)
 
 def vendor_create_view(request):
-
     form = RawVendorForm(request.POST or None)
     if form.is_valid():
         Vendor.objects.create(**form.cleaned_data)
@@ -65,11 +64,12 @@ class VendorModelForm(forms.ModelForm):
 class VendorCreateView(CreateView):
     form_class = VendorModelForm
     # model = Vendor
+    # cuz we use form_class, so we don't need to use fields
     # fields='__all__'
     # fields= ['vendor_name', 'store_name']
     template_name = 'vendor/vendor_create.html'
 
 class VendorUpdateView(UpdateView):
     form_class = VendorModelForm
-    template_name = 'vendors/vendor_create.html'
+    template_name = 'vendor/vendor_create.html'
     queryset = Vendor.objects.all()
